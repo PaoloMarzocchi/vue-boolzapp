@@ -10,7 +10,258 @@
 
 <body>
 
-    <div id="app"></div>
+    <div id="app">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Boolzapp</title>
+            <link rel="stylesheet" href="./assets/css/style.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+                integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+                crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+        </head>
+
+        <body>
+            <div class="wrapper d-flex">
+                <div class="site-container d-flex">
+                    <!-- Left section -->
+                    <div class="left">
+
+                        <!-- Left Header section -->
+                        <header class="left-header d-flex">
+                            <div class="profile">
+                                <img src="./assets/img/avatar_io.jpg" alt="profile image">
+                            </div>
+                            <ul class="tools d-flex">
+                                <li><i class="fa-solid fa-circle-notch"></i></li>
+                                <li><i class="fa-solid fa-message"></i></li>
+                                <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
+                            </ul>
+                        </header>
+                        <!-- /Left Header section -->
+
+                        <!-- Left main section -->
+                        <main class="left-main d-flex">
+
+                            <div class="notification d-flex">
+                                <div>
+                                    <i class="fa-solid fa-bell-slash"></i>
+                                </div>
+                                <div>
+                                    <h3>Ricevi notifiche di nuovi messaggi</h3>
+                                    <span>Attiva notifiche desktop</span>
+                                </div>
+                            </div>
+
+                            <div class="search d-flex">
+                                <div>
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <input type="text" placeholder="Cerca o inizia una nuova chat" size="30"></input>
+                                </div>
+                            </div>
+
+                            <ul class="contacts">
+                                <li class="d-flex">
+                                    <div class="user">
+                                        <img src="./assets/img/avatar_1.jpg" alt="">
+                                    </div>
+                                    <div class="info-user d-flex">
+                                        <div class="name">
+                                            <h3>Michele</h3>
+                                            <span>Lorem ipsum dolor sit amet.</span>
+                                        </div>
+                                        <span>16:15</span>
+                                    </div>
+                                </li>
+                                <li class="d-flex">
+                                    <div class="user">
+                                        <img src="./assets/img/avatar_2.jpg" alt="">
+                                    </div>
+                                    <div class="info-user d-flex">
+                                        <div class="name">
+                                            <h3>Fabio</h3>
+                                            <span>Lorem ipsum dolor sit amet.</span>
+                                        </div>
+                                        <span>16:05</span>
+                                    </div>
+                                </li>
+                                <li class="d-flex">
+                                    <div class="user">
+                                        <img src="./assets/img/avatar_3.jpg" alt="">
+                                    </div>
+                                    <div class="info-user d-flex">
+                                        <div class="name">
+                                            <h3>Samuele</h3>
+                                            <span>Lorem ipsum dolor sit amet.</span>
+                                        </div>
+                                        <span>16:03</span>
+                                    </div>
+                                </li>
+                                <li class="d-flex">
+                                    <div class="user">
+                                        <img src="./assets/img/avatar_4.jpg" alt="">
+                                    </div>
+                                    <div class="info-user d-flex">
+                                        <div class="name">
+                                            <h3>Alessandro B.</h3>
+                                            <span>Lorem ipsum dolor sit amet.</span>
+                                        </div>
+                                        <span>15:50</span>
+                                    </div>
+                                </li>
+                                <li class="d-flex">
+                                    <div class="user">
+                                        <img src="./assets/img/avatar_5.jpg" alt="">
+                                    </div>
+                                    <div class="info-user d-flex">
+                                        <div class="name">
+                                            <h3>Alessandro L.</h3>
+                                            <span>Lorem ipsum dolor sit amet.</span>
+                                        </div>
+                                        <span>15:45</span>
+                                    </div>
+                                </li>
+                                <li class="d-flex">
+                                    <div class="user">
+                                        <img src="./assets/img/avatar_6.jpg" alt="">
+                                    </div>
+                                    <div class="info-user d-flex">
+                                        <div class="name">
+                                            <h3>Debora</h3>
+                                            <span>Lorem ipsum dolor sit amet.</span>
+                                        </div>
+                                        <span>15:30</span>
+                                    </div>
+                                </li>
+                                <li class="d-flex">
+                                    <div class="user">
+                                        <img src="./assets/img/avatar_7.jpg" alt="">
+                                    </div>
+                                    <div class="info-user d-flex">
+                                        <div class="name">
+                                            <h3>Carlos</h3>
+                                            <span>Lorem ipsum dolor sit amet.</span>
+                                        </div>
+                                        <span>15:15</span>
+                                    </div>
+                                </li>
+                                <li class="d-flex">
+                                    <div class="user">
+                                        <img src="./assets/img/avatar_8.jpg" alt="">
+                                    </div>
+                                    <div class="info-user d-flex">
+                                        <div class="name">
+                                            <h3>Martin</h3>
+                                            <span>Lorem ipsum dolor sit amet.</span>
+                                        </div>
+                                        <span>15:00</span>
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </main>
+                        <!-- /Left main section -->
+                    </div>
+                    <!-- /Left section -->
+
+                    <!-- Right section -->
+                    <div class="right d-flex">
+
+                        <!-- Right header section -->
+                        <header class="right-header d-flex">
+                            <div class="contact d-flex">
+                                <div class="user">
+                                    <img src="./assets/img/avatar_1.jpg" alt="">
+                                </div>
+                                <div class="info-user d-flex">
+                                    <div class="name">
+                                        <h3>Michele</h3>
+                                        <span>Ultimo accesso oggi alle 16:26</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="tools d-flex">
+                                <li><i class="fa-solid fa-magnifying-glass"></i></li>
+                                <li><i class="fa-solid fa-paperclip"></i></li>
+                                <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
+                            </ul>
+                        </header>
+                        <!-- /Right header section -->
+
+                        <!-- Right main section -->
+                        <main class="right-main d-flex">
+                            <div class="sent">
+                                <div class="d-flex">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis consequuntur
+                                        distinctio
+                                        totam quia ut ex dignissimos laborum maiores illo nemo rerum, dolorem porro
+                                        ipsum,
+                                        placeat
+                                        tenetur asperiores. Beatae, quos tempore.
+                                    </p>
+                                    <i class="fa-solid fa-angle-down">
+                                        <ul class="menu">
+                                            <li>
+                                                <a href="#">Lorem.</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Quod.</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Commodi.</a>
+                                            </li>
+                                        </ul>
+                                    </i>
+                                </div>
+                                <span>16:13</span>
+                            </div>
+                            <div class="received">
+                                <div class="d-flex">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis consequuntur
+                                        distinctio
+                                        totam quia ut ex dignissimos laborum maiores illo nemo rerum, dolorem porro
+                                        ipsum,
+                                        placeat
+                                        tenetur asperiores. Beatae, quos tempore.
+                                    </p>
+                                    <i class="fa-solid fa-angle-down">
+                                        <ul class="menu">
+                                            <li>
+                                                <a href="#">Lorem.</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Quod.</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Commodi.</a>
+                                            </li>
+                                        </ul>
+                                    </i>
+                                    <span>16:13</span>
+                                </div>
+                        </main>
+                        <!-- /Right main section -->
+
+                        <!-- Right footer section -->
+                        <footer class="right-footer d-flex">
+                            <i class="fa-regular fa-face-smile"></i>
+                            <div contenteditable="true">
+                                Scrivi un messaggio
+                            </div>
+                            <i class="fa-solid fa-microphone"></i>
+                        </footer>
+                        <!-- Right footer section -->
+
+                    </div>
+                    <!-- /Right section -->
+
+                </div>
+            </div>
+    </div>
 
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
