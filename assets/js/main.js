@@ -5,6 +5,8 @@ createApp({
         return {
             activeIndex: 0,
             messageSent: "",
+            searchingContact: "",
+            flag: false,
             contacts: [
                 {
                     name: 'Michele',
@@ -171,8 +173,9 @@ createApp({
         }
     },
     methods: {
-        showMessages(index) {
-            this.activeIndex = index;
+        showMessages(contact) {
+            const contactIndex = this.contacts.indexOf(contact);
+            this.activeIndex = contactIndex;
 
         },
         sendMessage(index) {
@@ -184,10 +187,10 @@ createApp({
             };
 
             this.contacts[index].messages.push(newMessage);
-            setTimeout(this.replyMessage(index),1000)
-            this.messageSent= "";
+            setTimeout(this.replyMessage(index), 1000)
+            this.messageSent = "";
         },
-        replyMessage(index){
+        replyMessage(index) {
 
             const newMessage = {
                 date: this.currentDate(),
@@ -197,12 +200,12 @@ createApp({
 
             this.contacts[index].messages.push(newMessage);
         },
-        currentDate(){
+        currentDate() {
             const currentDate = new Date();
             let minutes = 0;
             if (currentDate.getMinutes() < 10) {
                 minutes = '0' + currentDate.getMinutes();
-            }else{
+            } else {
                 minutes = currentDate.getMinutes();
             }
             const dateTime = currentDate.getDate() + "/"
@@ -210,10 +213,29 @@ createApp({
                 + currentDate.getFullYear() + " "
                 + currentDate.getHours() + ":"
                 + minutes;
+
+            return dateTime;
+        },
+        searchContact() {
             
-                return dateTime;
+            const searchingString =  this.searchingContact.charAt(0).toUpperCase() + this.searchingContact.slice(1).toLowerCase();
+                    
+    
+            console.log(searchingString);
+            const filteredContact = this.contacts.filter((contact, index) => {
+
+                if (contact.name.includes(searchingString)) {
+                    this.flag = true
+                    return contact;
+                }
+            });
+            return filteredContact
         }
-        
+
+    },
+    mounted(){
+
     }
+    
 }).mount('#app')
 
