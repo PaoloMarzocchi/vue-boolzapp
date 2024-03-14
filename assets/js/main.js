@@ -7,6 +7,7 @@ createApp({
             messageSent: "",
             searchingContact: "",
             flag: false,
+            filteredContact:[],
             contacts: [
                 {
                     name: 'Michele',
@@ -220,19 +221,23 @@ createApp({
             
             const searchingString =  this.searchingContact.charAt(0).toUpperCase() + this.searchingContact.slice(1).toLowerCase();
                     
-            const filteredContact = this.contacts.filter((contact, index) => {
+            this.filteredContact = this.contacts.filter((contact, index) => {
 
                 if (contact.name.includes(searchingString)) {
                     this.flag = true
                     return contact;
                 }
             });
-            return filteredContact
+            /* return filteredContact */
         },
         removeMsg(msg){
             const msgArray = this.contacts[this.activeIndex].messages
             const msgIndex = msgArray.indexOf(msg);
             msgArray.splice(msgIndex,1)
+        },
+        lastMsgIndex(contact){
+            return contact.messages.length - 1;
+            
         }
 
     },

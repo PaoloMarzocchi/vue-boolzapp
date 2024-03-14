@@ -57,16 +57,17 @@
 
                             <ul class="contacts">
                                 <template v-if="flag">
-                                    <li class="d-flex" @click="showMessages(contact)" v-for="(contact,index) in searchContact()">
+                                    <li class="d-flex" @click="showMessages(contact)" v-for="(contact,index) in filteredContact">
                                         <div class="user">
                                             <img :src="contact.avatar" alt="">
                                         </div>
                                         <div class="info-user d-flex">
                                             <div class="name">
                                                 <h3>{{contact.name}}</h3>
-                                                <span>Lorem ipsum dolor sit amet.</span>
+                                                <span>
+                                                    {{contact.messages[lastMsgIndex(contact)].message}}</span>
                                             </div>
-                                            <span>16:15</span>
+                                            <span>{{contact.messages[lastMsgIndex(contact)].date}}</span>
                                         </div>
                                     </li>
                                 </template>
@@ -78,9 +79,9 @@
                                         <div class="info-user d-flex">
                                             <div class="name">
                                                 <h3>{{contact.name}}</h3>
-                                                <span>Lorem ipsum dolor sit amet.</span>
+                                                <span>{{contact.messages[lastMsgIndex(contact)].message}}</span>
                                             </div>
-                                            <span>16:15</span>
+                                            <span>{{contact.messages[lastMsgIndex(contact)].date}}</span>
                                         </div>
                                     </li>
                                 </template>
