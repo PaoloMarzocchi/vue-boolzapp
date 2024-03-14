@@ -8,6 +8,7 @@ createApp({
             searchingContact: "",
             flag: false,
             filteredContact:[],
+            toggleMsgMenu: false,
             contacts: [
                 {
                     name: 'Michele',
@@ -228,7 +229,7 @@ createApp({
                     return contact;
                 }
             });
-            /* return filteredContact */
+            
         },
         removeMsg(msg){
             console.log(msg);
