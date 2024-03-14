@@ -231,6 +231,7 @@ createApp({
             /* return filteredContact */
         },
         removeMsg(msg){
+            console.log(msg);
             const msgArray = this.contacts[this.activeIndex].messages
             const msgIndex = msgArray.indexOf(msg);
             msgArray.splice(msgIndex,1)

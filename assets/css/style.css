@@ -263,47 +263,54 @@ a{
     padding: 1rem 3rem;
     flex-direction: column;
 
-    &>div {
+    > div {
         width: 20rem;
         margin: 0.5rem 0;
         padding: 1rem;
         position: relative;
         border-radius: 10px;
+        
 
-        & i,
-        span {
-            color: var(--boolz-header-txt);
-        }
+        > div{
+            justify-content: space-between;
 
-        & i {
-            height: fit-content;
-           
-        }
-
-        & .menu {
-            display: none;
-            position: absolute;
-            left: 90%;
-            top: 2rem;
-            font-family: 'Lato', sans-serif;
-            font-size: 0.8rem;
-            font-weight: normal;
-            color: var(--boolz-footer-txt);
-            background-color: var(--boolz-footer);
-            box-shadow: inset -1px -1px 2px var(--boolz-footer-txt);
-            border-radius: 10px;
-            padding: 0.5rem;
-            z-index: 1;
-
-            & li{
-                padding: 0.3rem 0;
-                transition: all 0.5s ease-in-out;
+            & i,
+            span {
+                color: var(--boolz-header-txt);
             }
-
-            li:hover{
-                filter: opacity(60%);
+    
+            & i {
+                height: fit-content;
+               
+            }
+    
+            & .menu {
+                display: none;
+                position: absolute;
+                left: 90%;
+                top: 2rem;
+                font-family: 'Lato', sans-serif;
+                font-size: 0.8rem;
+                font-weight: normal;
+                color: var(--boolz-footer-txt);
+                background-color: var(--boolz-footer);
+                box-shadow: inset -1px -1px 2px var(--boolz-footer-txt);
+                border-radius: 10px;
+                padding: 0.5rem;
+                z-index: 1;
+    
+                & li{
+                    padding: 0.3rem 0;
+                    transition: all 0.5s ease-in-out;
+                }
+    
+                li:hover{
+                    filter: opacity(60%);
+                }
             }
         }
+        
+
 
         & span {
             position: absolute;
