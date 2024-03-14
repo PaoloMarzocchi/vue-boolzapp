@@ -108,57 +108,55 @@
 
                         <!-- Right main section -->
                         <main class="right-main d-flex">
-                            <div class="sent">
-                                <div class="d-flex">
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis consequuntur
-                                        distinctio
-                                        totam quia ut ex dignissimos laborum maiores illo nemo rerum, dolorem porro
-                                        ipsum,
-                                        placeat
-                                        tenetur asperiores. Beatae, quos tempore.
-                                    </p>
-                                    <i class="fa-solid fa-angle-down">
-                                        <ul class="menu">
-                                            <li>
-                                                <a href="#">Lorem.</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Quod.</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Commodi.</a>
-                                            </li>
-                                        </ul>
-                                    </i>
+                            <template v-for="message in contacts[0].messages">
+                                <div :class="message.status">
+                                    <div class="d-flex">
+                                        <p>
+                                            {{message.message}}
+                                        </p>
+                                        <i class="fa-solid fa-angle-down">
+                                            <ul class="menu">
+                                                <li>
+                                                    <a href="#">Lorem.</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Quod.</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Commodi.</a>
+                                                </li>
+                                            </ul>
+                                        </i>
+                                    </div>
+                                    <span>{{message.date}}</span>
                                 </div>
-                                <span>16:13</span>
-                            </div>
-                            <div class="received">
-                                <div class="d-flex">
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis consequuntur
-                                        distinctio
-                                        totam quia ut ex dignissimos laborum maiores illo nemo rerum, dolorem porro
-                                        ipsum,
-                                        placeat
-                                        tenetur asperiores. Beatae, quos tempore.
-                                    </p>
-                                    <i class="fa-solid fa-angle-down">
-                                        <ul class="menu">
-                                            <li>
-                                                <a href="#">Lorem.</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Quod.</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Commodi.</a>
-                                            </li>
-                                        </ul>
-                                    </i>
-                                    <span>16:13</span>
-                                </div>
+                                <!-- <div class="received">
+                                    <div class="d-flex">
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+                                            consequuntur
+                                            distinctio
+                                            totam quia ut ex dignissimos laborum maiores illo nemo rerum, dolorem porro
+                                            ipsum,
+                                            placeat
+                                            tenetur asperiores. Beatae, quos tempore.
+                                        </p>
+                                        <i class="fa-solid fa-angle-down">
+                                            <ul class="menu">
+                                                <li>
+                                                    <a href="#">Lorem.</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Quod.</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Commodi.</a>
+                                                </li>
+                                            </ul>
+                                        </i>
+                                        <span>16:13</span>
+                                    </div> -->
+                            </template>
                         </main>
                         <!-- /Right main section -->
 
