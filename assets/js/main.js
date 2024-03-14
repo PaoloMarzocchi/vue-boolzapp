@@ -220,8 +220,6 @@ createApp({
             
             const searchingString =  this.searchingContact.charAt(0).toUpperCase() + this.searchingContact.slice(1).toLowerCase();
                     
-    
-            console.log(searchingString);
             const filteredContact = this.contacts.filter((contact, index) => {
 
                 if (contact.name.includes(searchingString)) {
@@ -230,6 +228,11 @@ createApp({
                 }
             });
             return filteredContact
+        },
+        removeMsg(msg){
+            const msgArray = this.contacts[this.activeIndex].messages
+            const msgIndex = msgArray.indexOf(msg);
+            msgArray.splice(msgIndex,1)
         }
 
     },
