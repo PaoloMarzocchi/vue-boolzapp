@@ -63,100 +63,16 @@
                             </div>
 
                             <ul class="contacts">
-                                <li class="d-flex">
+                                <li class="d-flex" v-for="contact in contacts">
                                     <div class="user">
-                                        <img src="./assets/img/avatar_1.jpg" alt="">
+                                        <img :src="contact.avatar" alt="">
                                     </div>
                                     <div class="info-user d-flex">
                                         <div class="name">
-                                            <h3>Michele</h3>
+                                            <h3>{{contact.name}}</h3>
                                             <span>Lorem ipsum dolor sit amet.</span>
                                         </div>
                                         <span>16:15</span>
-                                    </div>
-                                </li>
-                                <li class="d-flex">
-                                    <div class="user">
-                                        <img src="./assets/img/avatar_2.jpg" alt="">
-                                    </div>
-                                    <div class="info-user d-flex">
-                                        <div class="name">
-                                            <h3>Fabio</h3>
-                                            <span>Lorem ipsum dolor sit amet.</span>
-                                        </div>
-                                        <span>16:05</span>
-                                    </div>
-                                </li>
-                                <li class="d-flex">
-                                    <div class="user">
-                                        <img src="./assets/img/avatar_3.jpg" alt="">
-                                    </div>
-                                    <div class="info-user d-flex">
-                                        <div class="name">
-                                            <h3>Samuele</h3>
-                                            <span>Lorem ipsum dolor sit amet.</span>
-                                        </div>
-                                        <span>16:03</span>
-                                    </div>
-                                </li>
-                                <li class="d-flex">
-                                    <div class="user">
-                                        <img src="./assets/img/avatar_4.jpg" alt="">
-                                    </div>
-                                    <div class="info-user d-flex">
-                                        <div class="name">
-                                            <h3>Alessandro B.</h3>
-                                            <span>Lorem ipsum dolor sit amet.</span>
-                                        </div>
-                                        <span>15:50</span>
-                                    </div>
-                                </li>
-                                <li class="d-flex">
-                                    <div class="user">
-                                        <img src="./assets/img/avatar_5.jpg" alt="">
-                                    </div>
-                                    <div class="info-user d-flex">
-                                        <div class="name">
-                                            <h3>Alessandro L.</h3>
-                                            <span>Lorem ipsum dolor sit amet.</span>
-                                        </div>
-                                        <span>15:45</span>
-                                    </div>
-                                </li>
-                                <li class="d-flex">
-                                    <div class="user">
-                                        <img src="./assets/img/avatar_6.jpg" alt="">
-                                    </div>
-                                    <div class="info-user d-flex">
-                                        <div class="name">
-                                            <h3>Debora</h3>
-                                            <span>Lorem ipsum dolor sit amet.</span>
-                                        </div>
-                                        <span>15:30</span>
-                                    </div>
-                                </li>
-                                <li class="d-flex">
-                                    <div class="user">
-                                        <img src="./assets/img/avatar_7.jpg" alt="">
-                                    </div>
-                                    <div class="info-user d-flex">
-                                        <div class="name">
-                                            <h3>Carlos</h3>
-                                            <span>Lorem ipsum dolor sit amet.</span>
-                                        </div>
-                                        <span>15:15</span>
-                                    </div>
-                                </li>
-                                <li class="d-flex">
-                                    <div class="user">
-                                        <img src="./assets/img/avatar_8.jpg" alt="">
-                                    </div>
-                                    <div class="info-user d-flex">
-                                        <div class="name">
-                                            <h3>Martin</h3>
-                                            <span>Lorem ipsum dolor sit amet.</span>
-                                        </div>
-                                        <span>15:00</span>
                                     </div>
                                 </li>
                             </ul>
