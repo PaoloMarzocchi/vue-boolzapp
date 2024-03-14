@@ -337,7 +337,7 @@ a{
     padding: 1rem 0;
     border-left: 1px solid var(--boolz-header-txt);
 
-    & div {
+    & input {
         flex-grow: 1;
         height: 100%;
         background-color: white;

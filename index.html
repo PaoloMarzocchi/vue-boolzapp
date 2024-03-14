@@ -137,9 +137,7 @@
                         <!-- Right footer section -->
                         <footer class="right-footer d-flex">
                             <i class="fa-regular fa-face-smile"></i>
-                            <div contenteditable="true">
-                                Scrivi un messaggio
-                            </div>
+                            <input type="text" @keyup.enter="sendMessage(activeIndex)" v-model="messageSent" placeholder="Scrivi il tuo messaggio">
                             <i class="fa-solid fa-microphone"></i>
                         </footer>
                         <!-- Right footer section -->
