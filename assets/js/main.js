@@ -7,7 +7,7 @@ createApp({
             messageSent: "",
             searchingContact: "",
             flag: false,
-            filteredContact:[],
+            filteredContact: [],
             toggleMsgMenu: false,
             contacts: [
                 {
@@ -219,9 +219,9 @@ createApp({
             return dateTime;
         },
         searchContact() {
-            
-            const searchingString =  this.searchingContact.charAt(0).toUpperCase() + this.searchingContact.slice(1).toLowerCase();
-                    
+
+            const searchingString = this.searchingContact.charAt(0).toUpperCase() + this.searchingContact.slice(1).toLowerCase();
+
             this.filteredContact = this.contacts.filter((contact, index) => {
 
                 if (contact.name.includes(searchingString)) {
@@ -229,23 +229,37 @@ createApp({
                     return contact;
                 }
             });
+
+        },
+        removeMsg(index) {
+
+            /* this.check();    */
+            /* console.log(this.contacts[this.activeIndex].messages); */
+            let msgArray = this.contacts[this.activeIndex].messages;
+            console.log(msgArray);
+
+            msgArray.splice(index, 1);
+
+            console.log(msgArray);
+
             
+            /* let msgIndex = msgArray.indexOf(msg); */
+            
+            
+
         },
-        removeMsg(msg){
-            console.log(msg);
-            const msgArray = this.contacts[this.activeIndex].messages
-            const msgIndex = msgArray.indexOf(msg);
-            msgArray.splice(msgIndex,1)
-        },
-        lastMsgIndex(contact){
+        lastMsgIndex(contact) {
             return contact.messages.length - 1;
-            
+
+        },
+        check() {
+            console.log(this.contacts[this.activeIndex].messages);
         }
 
     },
-    mounted(){
+    mounted() {
 
     }
-    
+
 }).mount('#app')
 

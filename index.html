@@ -129,25 +129,32 @@
 
                         <!-- Right main section -->
                         <main class="right-main d-flex">
-                            <template v-for="message in contacts[activeIndex].messages">
-                                <div :class="message.status">
-                                    <div class="d-flex">
-                                        <p>
-                                            {{message.message}}
-                                        </p>
-                                        <i class="fa-solid fa-angle-down">
-                                            <ul class="menu">
-                                                <li>
-                                                    <a href="#">Message info</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" @click="removeMsg(message)">Delete message</a>
-                                                </li>
-                                            </ul>
-                                        </i>
+                            <template v-if="contacts[activeIndex].messages.length >= 1">
+
+
+                                <template v-for="(message,index) in contacts[activeIndex].messages">
+
+
+                                    <div :class="message.status">
+                                        <div class="d-flex">
+                                            <p>
+                                                {{message.message}}
+                                            </p>
+                                            <i class="fa-solid fa-angle-down">
+                                                <ul class="menu">
+                                                    <li>
+                                                        <a href="#">Message info</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" @click="removeMsg(index)">Delete message</a>
+                                                    </li>
+                                                </ul>
+                                            </i>
+                                        </div>
+                                        <span>{{message.date}}</span>
                                     </div>
-                                    <span>{{message.date}}</span>
-                                </div>
+
+                                </template>
                             </template>
                         </main>
                         <!-- /Right main section -->
