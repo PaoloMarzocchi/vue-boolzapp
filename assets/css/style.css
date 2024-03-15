@@ -185,7 +185,7 @@ a{
     & li {
         cursor: pointer;
         height: 5.2rem;
-        padding: 1rem;
+        padding: 0.5rem;
         border-bottom: 1px solid var(--boolz-header-txt);
 
 
@@ -194,6 +194,7 @@ a{
             flex-grow: 1;
             justify-content: space-between;
             flex-direction: column;
+            justify-content: center;
 
             >.name {
                 justify-content: space-between;
@@ -279,10 +280,11 @@ a{
 
         > div{
             justify-content: space-between;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
 
             & p{
                 margin-right: 0.4rem;
+                
             }
 
             & i,
