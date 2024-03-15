@@ -67,9 +67,11 @@
                                             <div class="name d-flex">
                                                 <h3>{{contact.name}}</h3>
 
-                                                <span>{{contact.messages[lastMsgIndex(contact)].date}}</span>
+                                                <span v-if="contacts[activeIndex].messages.length">
+                                                    {{contact.messages[lastMsgIndex(contact)].date}}
+                                                </span>
                                             </div>
-                                            <span>
+                                            <span v-if="contacts[activeIndex].messages.length">
                                                 {{contact.messages[lastMsgIndex(contact)].message}}
                                             </span>
                                         </div>
@@ -85,12 +87,11 @@
                                         <div class="info-user d-flex">
                                             <div class="name d-flex">
                                                 <h3>{{contact.name}}</h3>
-
-                                                <span>
+                                                <span v-if="contacts[activeIndex].messages.length">
                                                     {{contact.messages[lastMsgIndex(contact)].date}}
                                                 </span>
                                             </div>
-                                            <span>
+                                            <span v-if="contacts[activeIndex].messages.length">
                                                 {{contact.messages[lastMsgIndex(contact)].message}}
                                             </span>
                                         </div>
@@ -129,11 +130,8 @@
 
                         <!-- Right main section -->
                         <main class="right-main d-flex">
-                            <template v-if="contacts[activeIndex].messages.length >= 1">
 
-
-                                <template v-for="(message,index) in contacts[activeIndex].messages">
-
+                            <template v-for="(message,index) in contacts[activeIndex].messages">
 
                                     <div :class="message.status">
                                         <div class="d-flex">
@@ -154,7 +152,6 @@
                                         <span>{{message.date}}</span>
                                     </div>
 
-                                </template>
                             </template>
                         </main>
                         <!-- /Right main section -->
