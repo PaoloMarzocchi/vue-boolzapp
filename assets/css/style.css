@@ -183,6 +183,7 @@ a{
     scrollbar-color:  var(--boolz-background-primary) white;
     
     & li {
+        cursor: pointer;
         height: 5.2rem;
         padding: 1rem;
         border-bottom: 1px solid var(--boolz-header-txt);
@@ -291,11 +292,11 @@ a{
     
             & i {
                 height: fit-content;
+                cursor: pointer;
                
             }
     
             & .menu {
-                /* display: none; */
                 position: absolute;
                 left: 80%;
                 top: 1.3rem;
@@ -338,11 +339,6 @@ a{
         background-color: var(--boolz-pop);
     }
 }
-
-/* .right-main i:hover>.menu {
-    display: block;
-} */
-
 
 /* #endregion Right Main */
 

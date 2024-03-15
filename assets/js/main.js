@@ -10,7 +10,7 @@ createApp({
             filteredContact: [],
             toggleMsgMenu: false,
             activeMsgIndex: null,
-            showClassMenu: 'shown',
+            msgReplied: null,
             contacts: [
                 {
                     name: 'Michele',
@@ -182,7 +182,7 @@ createApp({
             this.activeIndex = contactIndex;
 
         },
-        sendMessage(index) {
+        sendMessage() {
 
             const newMessage = {
                 date: this.currentDate(),
@@ -190,19 +190,20 @@ createApp({
                 status: 'sent'
             };
 
-            this.contacts[index].messages.push(newMessage);
-            setTimeout(this.replyMessage(index), 1000)
+            this.contacts[this.activeIndex].messages.push(newMessage);
+            
+            setTimeout(this.replyMessage, 1000)
             this.messageSent = "";
         },
-        replyMessage(index) {
+        replyMessage() {
 
             const newMessage = {
                 date: this.currentDate(),
                 message: 'ok',
                 status: 'received'
             };
-
-            this.contacts[index].messages.push(newMessage);
+            this.contacts[this.activeIndex].messages.push(newMessage);
+            
         },
         currentDate() {
             const currentDate = new Date();
@@ -235,34 +236,21 @@ createApp({
         },
         removeMsg(index) {
 
-            /* this.check();    */
-            /* console.log(this.contacts[this.activeIndex].messages); */
             let msgArray = this.contacts[this.activeIndex].messages;
-            console.log(msgArray);
 
             msgArray.splice(index, 1);
-
-            console.log(msgArray);
-
-            this.showClassMenu = null;
-            /* let msgIndex = msgArray.indexOf(msg); */
-            
-            
 
         },
         lastMsgIndex(contact) {
             return contact.messages.length - 1;
 
         },
-        check() {
-            console.log(this.contacts[this.activeIndex].messages);
-        },
         dropDownMenu(msg){
             
             this.toggleMsgMenu = !this.toggleMsgMenu; 
 
             const msgIndex = this.contacts[this.activeIndex].messages.indexOf(msg);
-            
+
             if (msg[msgIndex] === this.contacts[this.activeIndex].messages[this.activeMsgIndex]) {
                 this.activeMsgIndex = msgIndex;
                 
@@ -270,10 +258,6 @@ createApp({
               
         }
 
-    },
-    mounted() {
-
     }
-
 }).mount('#app')
 
