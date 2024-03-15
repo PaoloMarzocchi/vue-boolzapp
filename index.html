@@ -138,8 +138,9 @@
                                             <p>
                                                 {{message.message}}
                                             </p>
-                                            <i class="fa-solid fa-angle-down">
-                                                <ul class="menu">
+                                            <i class="fa-solid fa-angle-down" @click="dropDownMenu(message)">
+                                                <template v-if="(index === activeMsgIndex) && toggleMsgMenu">
+                                                <ul class="menu" :class="showClassMenu">
                                                     <li>
                                                         <a href="#">Message info</a>
                                                     </li>
@@ -147,6 +148,7 @@
                                                         <a href="#" @click="removeMsg(index)">Delete message</a>
                                                     </li>
                                                 </ul>
+                                            </template>
                                             </i>
                                         </div>
                                         <span>{{message.date}}</span>

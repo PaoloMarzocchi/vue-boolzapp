@@ -295,7 +295,7 @@ a{
             }
     
             & .menu {
-                display: none;
+                /* display: none; */
                 position: absolute;
                 left: 80%;
                 top: 1.3rem;
@@ -339,9 +339,9 @@ a{
     }
 }
 
-.right-main i:hover>.menu {
+/* .right-main i:hover>.menu {
     display: block;
-}
+} */
 
 
 /* #endregion Right Main */

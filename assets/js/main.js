@@ -9,6 +9,8 @@ createApp({
             flag: false,
             filteredContact: [],
             toggleMsgMenu: false,
+            activeMsgIndex: null,
+            showClassMenu: 'shown',
             contacts: [
                 {
                     name: 'Michele',
@@ -242,7 +244,7 @@ createApp({
 
             console.log(msgArray);
 
-            
+            this.showClassMenu = null;
             /* let msgIndex = msgArray.indexOf(msg); */
             
             
@@ -254,6 +256,18 @@ createApp({
         },
         check() {
             console.log(this.contacts[this.activeIndex].messages);
+        },
+        dropDownMenu(msg){
+            
+            this.toggleMsgMenu = !this.toggleMsgMenu; 
+
+            const msgIndex = this.contacts[this.activeIndex].messages.indexOf(msg);
+            
+            if (msg[msgIndex] === this.contacts[this.activeIndex].messages[this.activeMsgIndex]) {
+                this.activeMsgIndex = msgIndex;
+                
+            }
+              
         }
 
     },
