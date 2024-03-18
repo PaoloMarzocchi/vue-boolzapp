@@ -57,30 +57,9 @@
                             </div>
 
                             <ul class="contacts">
-                                <template v-if="flag">
+                                <template v-for="(contact,index) in contacts" >
                                     <li class="d-flex" @click="showMessages(contact)"
-                                        v-for="(contact,index) in filteredContact">
-                                        <div class="user">
-                                            <img :src="contact.avatar" alt="">
-                                        </div>
-                                        <div class="info-user d-flex">
-                                            <div class="name d-flex">
-                                                <h3>{{contact.name}}</h3>
-
-                                                <span v-if="contacts[activeIndex].messages.length">
-                                                    {{contact.messages[lastMsgIndex(contact)].date}}
-                                                </span>
-                                            </div>
-                                            <span v-if="contacts[activeIndex].messages.length">
-                                                {{contact.messages[lastMsgIndex(contact)].message}}
-                                            </span>
-                                        </div>
-
-                                    </li>
-                                </template>
-                                <template v-else>
-                                    <li class="d-flex" @click="showMessages(contact)"
-                                        v-for="(contact,index) in contacts">
+                                       v-show="contact.visible" >
                                         <div class="user">
                                             <img :src="contact.avatar" alt="">
                                         </div>

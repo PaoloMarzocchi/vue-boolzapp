@@ -6,8 +6,6 @@ createApp({
             activeIndex: 0,
             messageSent: "",
             searchingContact: "",
-            flag: false,
-            filteredContact: [],
             toggleMsgMenu: false,
             activeMsgIndex: null,
             msgReplied: null,
@@ -225,13 +223,16 @@ createApp({
 
             const searchingString = this.searchingContact.charAt(0).toUpperCase() + this.searchingContact.slice(1).toLowerCase();
 
-            this.filteredContact = this.contacts.filter((contact, index) => {
-
-                if (contact.name.includes(searchingString)) {
-                    this.flag = true
-                    return contact;
+            this.contacts.forEach(contact =>{
+                const lowerName = contact.name.charAt(0).toUpperCase() + contact.name.slice(1).toLowerCase();
+                console.log(searchingString, lowerName);
+                if (lowerName.includes(searchingString)) {
+                    contact.visible = true;
+                    
+                } else{
+                    contact.visible = false;
                 }
-            });
+            })
 
         },
         removeMsg(index) {
