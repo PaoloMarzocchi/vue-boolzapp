@@ -57,9 +57,8 @@
                             </div>
 
                             <ul class="contacts">
-                                <template v-for="(contact,index) in contacts" >
-                                    <li class="d-flex" @click="showMessages(contact)"
-                                       v-show="contact.visible" >
+                                <template v-for="(contact,index) in contacts">
+                                    <li class="d-flex" @click="showMessages(contact)" v-show="contact.visible">
                                         <div class="user">
                                             <img :src="contact.avatar" alt="">
                                         </div>
@@ -112,26 +111,25 @@
 
                             <template v-for="(message,index) in contacts[activeIndex].messages">
 
-                                    <div :class="message.status">
-                                        <div class="d-flex">
-                                            <p>
-                                                {{message.message}}
-                                            </p>
-                                            <i class="fa-solid fa-angle-down" @click="dropDownMenu(message)">
-                                                <template v-if="(index === activeMsgIndex) && toggleMsgMenu">
-                                                <ul class="menu">
-                                                    <li>
-                                                        <a href="#">Message info</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" @click="removeMsg(index)">Delete message</a>
-                                                    </li>
-                                                </ul>
-                                            </template>
-                                            </i>
-                                        </div>
-                                        <span>{{message.date}}</span>
+                                <div :class="message.status">
+                                    <div class="d-flex">
+                                        <p>
+                                            {{message.message}}
+                                        </p>
+
+                                        <i class="fa-solid fa-angle-down" @click="dropDownMenu(index)">
+                                            <ul class="menu" v-if="activeMsgIndex === index && toggleMsgMenu">
+                                                <li>
+                                                    <a href="#">Message info</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" @click="removeMsg(index)">Delete message</a>
+                                                </li>
+                                            </ul>
+                                        </i>
                                     </div>
+                                    <span>{{message.date}}</span>
+                                </div>
 
                             </template>
                         </main>

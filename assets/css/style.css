@@ -297,7 +297,7 @@ a{
                
             }
     
-            & .menu {
+            .menu {
                 position: absolute;
                 left: 80%;
                 top: 1.3rem;

@@ -246,17 +246,12 @@ createApp({
             return contact.messages.length - 1;
 
         },
-        dropDownMenu(msg){
+        dropDownMenu(index){
             
             this.toggleMsgMenu = !this.toggleMsgMenu; 
-
-            const msgIndex = this.contacts[this.activeIndex].messages.indexOf(msg);
-
-            if (msg[msgIndex] === this.contacts[this.activeIndex].messages[this.activeMsgIndex]) {
-                this.activeMsgIndex = msgIndex;
-                
-            }
-              
+            
+            this.activeMsgIndex = index;
+        
         }
 
     }
